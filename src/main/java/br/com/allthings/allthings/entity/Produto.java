@@ -1,19 +1,33 @@
 package br.com.allthings.allthings.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity
+@Data
 public class Produto {
     
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer idProduto;
 
+    @Column(nullable = false, length = 40)
     private String descricaoProduto;
 
+    @Column(nullable = false, length = 40)
     private String marcaProduto;
 
+    @Column(nullable = false, length = 40)
     private String modeloProduto;
 
+    @Column(nullable = false, length = 10)
     private String unidadeProduto;
-    
+
+    @Column(nullable = false)
     private double valorProduto;
+
 }
