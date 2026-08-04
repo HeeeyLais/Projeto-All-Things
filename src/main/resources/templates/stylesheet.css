@@ -1,0 +1,8 @@
+h1, h3{
+    align-items: center;
+    text-align: center;
+}
+td {
+    align-self: center;
+    border-width: 1;
+}
