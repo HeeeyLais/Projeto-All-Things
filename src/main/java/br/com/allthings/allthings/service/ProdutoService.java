@@ -18,8 +18,19 @@ public class ProdutoService {
     public Produto save (Produto produto){
         return produtoRepository.save(produto);
     }
+
     // listar produtos(todos)
     public List <Produto> findAll(){
         return produtoRepository.findAll();
+    }
+
+    //excluir por id
+    public void deleteById(Integer id){
+        produtoRepository.deleteById(id);
+    }
+
+    //buscar por id
+    public Produto findByID(Integer id){
+        return produtoRepository.findById(id).orElse(null);
     }
 }

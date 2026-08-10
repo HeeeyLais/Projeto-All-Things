@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos</title>
-    <link rel="stylesheet" href="/src/main/resources/templates/stylesheet.css">
+    <link rel="stylesheet" th:href="@{/stylesheet.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Lista de Produtos</h1>
-    <h3><a href="/produtos/criar">
+    <h3><a href="/produtos/criar" class="botao">
         Novo Produto</a></h3>
 
     <table>

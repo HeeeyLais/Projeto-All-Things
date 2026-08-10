@@ -1,0 +1,142 @@
+body {
+    background-color: #fff7fa;
+    font-family: 'Quicksand', sans-serif;
+    color: #252022;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #d4779e;
+}
+
+/* TABELA */
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(210, 120, 160, 0.12);
+}
+
+th {
+    background-color: #f3a6c8;
+    color: white;
+    font-weight: normal;
+    padding: 14px;
+}
+
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #f5d5e2;
+}
+
+tr:hover td {
+    background-color: #fff0f6;
+}
+
+/* LINKS */
+
+td a {
+    color: #d4779e;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+td a:hover {
+    color: #b95c83;
+}
+
+/* FORMULÁRIO */
+
+form {
+    width: 350px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(210, 120, 160, 0.12);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #6b4d59;
+}
+
+input {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+
+    border: 1px solid #edc1d3;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #e395b5;
+    box-shadow: 0 0 0 2px #fde5ef;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #e395b5;
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d4779e;
+}
+
+tr:hover td {
+    background-color: #fff0f6;
+}
+
+td a {
+    color: #c76b91;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 6px;
+}
+
+td a:hover {
+    color: #a94f76;
+    text-decoration: underline;
+}
+
+td a:first-child {
+    color: #c76b91;
+}
+
+td a:last-child {
+    color: #b85c7d;
+}
+
+td a:hover {
+    opacity: 0.7;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #e395b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background-color: #d4779e;
+}
