@@ -30,7 +30,7 @@ public class ClienteController {
     public String listar(Model model){
         List<Cliente> clientes = clienteService.findAll();
         model.addAttribute("clientes", clientes);
-        return "cliente/listaClientes";
+        return "cliente/listaCliente";
     }
 
     @GetMapping("/criar")

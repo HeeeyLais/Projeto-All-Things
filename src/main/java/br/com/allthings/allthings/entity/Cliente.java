@@ -13,27 +13,27 @@ public class Cliente {
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private Integer idCLiente;
+    private Integer idCliente;
 
     @Column(nullable = false, length = 40)
     private String nomeCliente;
 
     @Column(nullable = false, length = 40)
-    private String endereçoCliente;
+    private String enderecoCliente;
 
     @Column(nullable = false, length = 40)
     private String cidadeCliente;
 
     @Column(nullable = false, length = 2)
-    private String estadoCLiente;
+    private String estadoCliente;
 
     @Column(nullable = false, length = 20)
-    private String cepCLiente;
-
-    @Column(nullable = false, length = 2)
-    private String cpfCLiente;
+    private String cepCliente;
 
     @Column(nullable = false, length = 20)
-    private String rgCLiente;
+    private String cpfCliente;
+
+    @Column(nullable = false, length = 20)
+    private String rgCliente;
 
 }

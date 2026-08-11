@@ -30,7 +30,7 @@ public class FornecedorController {
     public String listarFornecedores(Model model) {
         List<Fornecedor> fornecedores = fornecedorService.findAll();
         model.addAttribute("fornecedores", fornecedores);
-        return "fornecedor/listaFornecedores";
+        return "fornecedor/listaFornecedor";
     }
 
     @GetMapping("/criar")

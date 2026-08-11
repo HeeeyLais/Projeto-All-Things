@@ -18,7 +18,7 @@ public class Fornecedor {
     private String nomeFornecedor;
 
     @Column(nullable = false, length = 40)
-    private String endereçoFornecedor;
+    private String enderecoFornecedor;
 
     @Column(nullable = false, length = 40)
     private String cidadeFornecedor;
