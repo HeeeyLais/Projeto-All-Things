@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -29,5 +31,10 @@ public class Produto {
 
     @Column(nullable = false)
     private double valorProduto;
+
+    // muitos produtos para um unico fornecedor
+    @ManyToOne
+    @JoinColumn(name = "idFornecedor_fk")
+    private Fornecedor fornecedor;
 
 }

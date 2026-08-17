@@ -55,6 +55,16 @@
         >
         <br><br>
 
+        <label for= "idFornecedor">Fornecedor</label>
+        <select th:field="*{fornecedor}">
+            <option value="" disabled selected>Selecione o fornecedor</option>
+            <option th:each="fornecedor : ${fornecedores}"
+                    th:text="${produto.fornecedor != null ? produto.fornecedor.nomeFornecedor : 'Sem fornecedor'}"
+                    th:value="${fornecedor.idFornecedor}"
+            > </option>
+        </select>
+        <br><br>
+
         <button type="submit">Salvar Produto</button>
     </form>
 </body>
