@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.allthings.allthings.entity.Categoria;
 import br.com.allthings.allthings.entity.Fornecedor;
 import br.com.allthings.allthings.entity.Produto;
+import br.com.allthings.allthings.service.CategoriaService;
 import br.com.allthings.allthings.service.FornecedorService;
 import br.com.allthings.allthings.service.ProdutoService;
 
@@ -24,6 +26,9 @@ public class ProdutoController {
 
     @Autowired
     private FornecedorService fornecedorService;
+
+    @Autowired
+    private CategoriaService categoriaService;
 
     //métodos
     //salvar
@@ -47,6 +52,8 @@ public class ProdutoController {
         model.addAttribute("produto", new Produto());
         List<Fornecedor> fornecedores = fornecedorService.findAll();
         model.addAttribute("fornecedores", fornecedores);
+        List<Categoria> categorias = categoriaService.findAll();
+        model.addAttribute("categorias", categorias);
         return "produto/formularioProduto";
     }
 

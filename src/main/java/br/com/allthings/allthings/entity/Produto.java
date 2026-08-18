@@ -18,6 +18,9 @@ public class Produto {
     private Integer idProduto;
 
     @Column(nullable = false, length = 40)
+    private String nomeProduto;
+
+    @Column(nullable = false, length = 40)
     private String descricaoProduto;
 
     @Column(nullable = false, length = 40)
@@ -36,5 +39,9 @@ public class Produto {
     @ManyToOne
     @JoinColumn(name = "idFornecedor_fk")
     private Fornecedor fornecedor;
+
+    @ManyToOne
+    @JoinColumn (name = "idCategoria_fk")
+    private Categoria categoria;
 
 }

@@ -10,6 +10,16 @@
 <body>
     <h1>Cadastro de Produtos</h1>
     <form th:action="@{/produtos/salvar}" method="post" th:object="${produto}">
+
+        <label for="nomeProduto">Nome</label>
+        <input
+        type="text"
+        id="nomeProduto"
+        name="nomeProduto"
+        th:field="*{nomeProduto}"
+        >
+        <br><br>
+
         <label for="descricaoProduto">Descrição</label>
         <input
         type="text"
@@ -59,7 +69,7 @@
         <select th:field="*{fornecedor}">
             <option value="" disabled selected>Selecione o fornecedor</option>
             <option th:each="fornecedor : ${fornecedores}"
-                    th:text="${produto.fornecedor != null ? produto.fornecedor.nomeFornecedor : 'Sem fornecedor'}"
+                    th:text="${fornecedor.nomeFornecedor}"
                     th:value="${fornecedor.idFornecedor}"
             > </option>
         </select>
@@ -67,11 +77,11 @@
 
         <label for= "idCategoria">Categoria</label>
         <select th:field="*{categoria}">
-            <option value="" disabled selected>Selecione a cate</option>
-            <option th:each="fornecedor : ${fornecedores}"
-                    th:text="${produto.fornecedor != null ? produto.fornecedor.nomeFornecedor : 'Sem fornecedor'}"
-                    th:value="${fornecedor.idFornecedor}"
-            > </option>
+            <option value="" disabled selected>Selecione a categoria</option>
+            <option th:each="categoria : ${categorias}"
+                    th:text="${categoria.nomeCategoria}"
+                    th:value="${categoria.idCategoria}">
+            </option>
         </select>
         <br><br>
 

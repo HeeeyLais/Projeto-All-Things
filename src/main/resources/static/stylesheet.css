@@ -1,143 +1,149 @@
+:root {
+    --creme: #FFF8F3;
+    --creme-escuro: #F6E8E0;
+
+    --rosa: #D95D8A;
+    --rosa-claro: #F2A7C0;
+
+    --vinho: #8F3155;
+    --vinho-escuro: #68233E;
+
+    --amarelo: #F2D492;
+
+    --texto: #30252A;
+    --texto-suave: #6F5B63;
+
+    --branco: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #fff7fa;
+    margin: 0;
+    padding: 30px 20px;
+    background-color: var(--creme);
     font-family: 'Quicksand', sans-serif;
-    color: #252022;
+    color: var(--texto);
+    line-height: 1.6;
 }
 
-h1, h3 {
+h1,
+h3 {
     text-align: center;
-    color: #d4779e;
+    color: var(--vinho);
+    font-weight: 800;
 }
-
-/* TABELA */
 
 table {
     width: 80%;
     margin: 40px auto;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(210, 120, 160, 0.12);
+    border-spacing: 0;
+    background-color: var(--branco);
+    border: 2px solid var(--vinho);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 7px 7px 0 var(--rosa-claro);
 }
 
 th {
-    background-color: #f3a6c8;
-    color: white;
-    font-weight: normal;
-    padding: 14px;
+    padding: 16px;
+    background-color: var(--vinho);
+    color: var(--branco);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 td {
-    padding: 13px;
+    padding: 16px;
     text-align: center;
-    border-bottom: 1px solid #f5d5e2;
+    border-bottom: 1px solid var(--creme-escuro);
+    color: var(--texto-suave);
 }
 
-tr:hover td {
-    background-color: #fff0f6;
+tbody tr:nth-child(even) {
+    background-color: var(--creme);
 }
 
-/* LINKS */
+tbody tr:hover {
+    background-color: var(--rosa-claro);
+}
+
+tbody tr:hover td {
+    color: var(--vinho-escuro);
+}
 
 td a {
-    color: #d4779e;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 9px;
+    color: var(--vinho);
     text-decoration: none;
-    margin: 0 8px;
+    font-weight: 700;
+    border-radius: 8px;
 }
 
 td a:hover {
-    color: #b95c83;
+    background-color: var(--vinho);
+    color: var(--branco);
 }
 
-/* FORMULÁRIO */
-
 form {
-    width: 350px;
+    width: 80%;
+    max-width: 500px;
     margin: 40px auto;
     padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(210, 120, 160, 0.12);
+    background-color: var(--branco);
+    border-radius: 8px;
+    border: 2px solid var(--vinho);
+    box-shadow: 7px 7px 0 var(--rosa-claro);
 }
 
 label {
     display: block;
-    margin-bottom: 6px;
-    color: #6b4d59;
+    margin-bottom: 5px;
+    color: var(--vinho);
+    font-weight: 700;
 }
 
-input, select {
+input,
+select {
     width: 100%;
-    padding: 9px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-
-    border: 1px solid #edc1d3;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--creme-escuro);
     border-radius: 6px;
-    outline: none;
-}
-
-input:focus,
-select:focus {
-    border-color: #e395b5;
-    box-shadow: 0 0 0 2px #fde5ef;
+    background-color: var(--creme);
+    color: var(--texto);
 }
 
 button {
     width: 100%;
     padding: 10px;
-
-    border: none;
+    background-color: var(--rosa);
+    color: var(--branco);
+    border: 2px solid var(--rosa);
     border-radius: 6px;
-
-    background-color: #e395b5;
-    color: white;
-
-    cursor: pointer;
+    font-weight: 700;
 }
 
 button:hover {
-    background-color: #d4779e;
-}
-
-tr:hover td {
-    background-color: #fff0f6;
-}
-
-td a {
-    color: #c76b91;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 6px;
-}
-
-td a:hover {
-    color: #a94f76;
-    text-decoration: underline;
-}
-
-td a:first-child {
-    color: #c76b91;
-}
-
-td a:last-child {
-    color: #b85c7d;
-}
-
-td a:hover {
-    opacity: 0.7;
+    background-color: var(--vinho);
+    border-color: var(--vinho);
 }
 
 .botao {
     display: inline-block;
     padding: 10px 18px;
-    background-color: #e395b5;
-    color: white;
+    background-color: var(--vinho);
+    color: var(--branco);
     text-decoration: none;
     border-radius: 6px;
-    font-weight: 600;
-    transition: 0.2s;
+    font-weight: 700;
 }
 
 .botao:hover {
-    background-color: #d4779e;
+    background-color: var(--rosa);
 }
