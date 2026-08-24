@@ -147,3 +147,26 @@ button:hover {
 .botao:hover {
     background-color: var(--rosa);
 }
+.imagem {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    display: block;
+    margin: 10px auto;
+
+    border: 3px solid var(--vinho);
+    border-radius: 12px;
+    padding: 4px;
+
+    background-color: var(--branco);
+
+    box-shadow: 4px 4px 0 var(--rosa-claro);
+
+    transition: 0.2s ease;
+}
+
+.imagem:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--rosa);
+}
