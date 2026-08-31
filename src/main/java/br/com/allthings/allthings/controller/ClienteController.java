@@ -3,6 +3,8 @@ package br.com.allthings.allthings.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +33,13 @@ public class ClienteController {
                     cliente.setFotoCliente(foto.getBytes());
                     cliente.setTipoFoto(foto.getContentType());
                 }
-            
+                else if (cliente.getIdCliente() != null){
+                    Cliente clienteExistente = clienteService.findByID(cliente.getIdCliente());
+                    if (clienteExistente != null) {
+                        cliente.setFotoCliente(clienteExistente.getFotoCliente());
+                        cliente.setTipoFoto(clienteExistente.getTipoFoto());
+                    }
+                }
         clienteService.save(cliente);
                 } catch (Exception e) {
                 e.printStackTrace();
@@ -65,5 +73,15 @@ public class ClienteController {
         return "cliente/formularioCliente";
     }
 
+    @GetMapping("/foto/{id}")
+    public ResponseEntity <byte[]> foto (@PathVariable Integer id){
+        Cliente cliente = clienteService.findByID(id);
+        if (cliente == null || cliente.getFotoCliente() == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok()
+        .contentType(MediaType.parseMediaType(cliente.getTipoFoto()))
+        .body(cliente.getFotoCliente());
+    }
     
 }
