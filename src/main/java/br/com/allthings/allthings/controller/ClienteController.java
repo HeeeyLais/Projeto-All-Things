@@ -29,7 +29,7 @@ public class ClienteController {
         @RequestParam("foto") MultipartFile foto){
         
             try {
-                if (foto.isEmpty()) {
+                if (!foto.isEmpty()) {
                     cliente.setFotoCliente(foto.getBytes());
                     cliente.setTipoFoto(foto.getContentType());
                 }

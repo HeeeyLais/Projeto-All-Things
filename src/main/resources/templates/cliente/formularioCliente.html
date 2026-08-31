@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Cadastro de Clientes</h1>
-    <form th:action="@{/clientes/salvar}" method="post" th:object="${cliente}">
+    <form th:action="@{/clientes/salvar}" method="post" th:object="${cliente}" enctype="multipart/form-data"    >
         <label for="nomeCliente">Nome</label>
         <input
         type="text"
