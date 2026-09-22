@@ -26,4 +26,6 @@ public class Usuario {
     @Column (nullable = false, length = 100)
     private String emailUsuario;
 
+    private String role = "ROLE_USER";
+
 }
