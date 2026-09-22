@@ -25,27 +25,31 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute Cliente cliente, 
-        @RequestParam("foto") MultipartFile foto){
-        
-            try {
-                if (!foto.isEmpty()) {
-                    cliente.setFotoCliente(foto.getBytes());
-                    cliente.setTipoFoto(foto.getContentType());
-                }
-                else if (cliente.getIdCliente() != null){
-                    Cliente clienteExistente = clienteService.findByID(cliente.getIdCliente());
-                    if (clienteExistente != null) {
-                        cliente.setFotoCliente(clienteExistente.getFotoCliente());
-                        cliente.setTipoFoto(clienteExistente.getTipoFoto());
-                    }
-                }
-        clienteService.save(cliente);
-                } catch (Exception e) {
-                e.printStackTrace();
+    public String salvar(@ModelAttribute Cliente cliente,
+                     @RequestParam(value = "foto", required = false) MultipartFile foto) {
+
+    try {
+        if (foto != null && !foto.isEmpty()) {
+            cliente.setFotoCliente(foto.getBytes());
+            cliente.setTipoFoto(foto.getContentType());
+        } else if (cliente.getIdCliente() != null) {
+            Cliente clienteExistente = clienteService.findByID(cliente.getIdCliente());
+            if (clienteExistente != null) {
+                cliente.setFotoCliente(clienteExistente.getFotoCliente());
+                cliente.setTipoFoto(clienteExistente.getTipoFoto());
             }
-        return "redirect:/clientes/listar";
+        }
+
+        clienteService.save(cliente);
+        System.out.println("Cliente salvo com id: " + cliente.getIdCliente());
+
+    } catch (Exception e) {
+        System.err.println("ERRO AO SALVAR CLIENTE:");
+        e.printStackTrace();  // olha o console do Spring!
     }
+
+    return "redirect:/clientes/listar";
+}
 
     @GetMapping("/listar")
     public String listar(Model model){

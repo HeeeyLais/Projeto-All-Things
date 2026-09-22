@@ -18,6 +18,7 @@ public class SecurityConfig {
                         .requestMatchers(   "/login", 
                                             "/allthings", 
                                             "/css/**", 
+                                            "/stylesheet.css",
                                             "/images/**", 
                                             "/usuarios/**")
                         .permitAll()

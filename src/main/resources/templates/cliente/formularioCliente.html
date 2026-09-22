@@ -10,6 +10,8 @@
 <body>
     <h1>Cadastro de Clientes</h1>
     <form th:action="@{/clientes/salvar}" method="post" th:object="${cliente}" enctype="multipart/form-data"    >
+    <input type="hidden" th:field="*{idCliente}">
+
         <label for="nomeCliente">Nome</label>
         <input
         type="text"

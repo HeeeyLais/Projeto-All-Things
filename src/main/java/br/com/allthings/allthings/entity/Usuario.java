@@ -2,6 +2,8 @@ package br.com.allthings.allthings.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -9,6 +11,7 @@ import lombok.Data;
 @Data
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idUsuario;
 
     @Column(nullable = false, length = 40)
@@ -17,7 +20,7 @@ public class Usuario {
     @Column (nullable = false, length = 100)
     private String loginUsuario;
 
-    @Column (nullable = false, length = 50)
+    @Column (nullable = false, length = 100)
     private String senhaUsuario;
 
     @Column (nullable = false, length = 20)
